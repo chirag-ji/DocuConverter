@@ -37,8 +37,11 @@ Like to get the code in ***ByteArrayOutputStream***, we can write
  ### Including API in your project
  Only you have to unzip abd include the jar file from the [release](https://github.com/chirag-ji/DocuConverter/releases) tab to your project
 > See
-    [Adding external libraries in IntelliJ Idea](https://stackoverflow.com/questions/1051640/correct-way-to-add-external-jars-lib-jar-to-an-intellij-idea-project/#answer-1051705)
+> 
+> [Adding external libraries in IntelliJ Idea](https://stackoverflow.com/questions/1051640/correct-way-to-add-external-jars-lib-jar-to-an-intellij-idea-project/#answer-1051705)
+>
 > [Adding external libraries in NetBeans](https://stackoverflow.com/questions/4879903/how-to-add-a-jar-in-netbeans/#answer-4879952)
+> 
 > [Adding external libraries in Eclipse](https://stackoverflow.com/questions/3280353/how-to-import-a-jar-in-eclipse/#answer-3280384)
 
 
