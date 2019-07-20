@@ -14,5 +14,5 @@ public interface BuildConfig {
     String LICENCE = "MIT License";
     String COPYRIGHT_YEAR = "2019";
 
-    boolean debug = true;
+    boolean debug = false;
 }
