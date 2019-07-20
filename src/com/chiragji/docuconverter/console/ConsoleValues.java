@@ -19,7 +19,7 @@ public class ConsoleValues {
     @Option(name = "-verbose", aliases = "-v", usage = "To see intermediate processing messages.")
     private boolean verbose;
 
-    @Option(name = "-version", aliases = "-ver", usage = "View current api version")
+    @Option(name = "-version", aliases = "-ver", usage = "View current Library Version")
     private boolean showVersion;
 
     @Option(name = "-help", aliases = "-h", usage = "Shows this message")
