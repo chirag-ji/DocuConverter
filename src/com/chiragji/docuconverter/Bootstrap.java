@@ -24,7 +24,7 @@ public class Bootstrap {
             Test test = new Test();
             test.docXToPdf();
             test.pptXToPdf();
-            test.docToPdf();
+            test.txtToPdf();
         } else
             processConsoleArgs(args);
     }

@@ -1,5 +1,6 @@
 package com.chiragji.docuconverter.logic;
 
+import com.chiragji.docuconverter.enums.PageSize;
 import fr.opensagres.poi.xwpf.converter.pdf.PdfOptions;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
@@ -26,4 +27,8 @@ final class DocXtoPdf extends AbstractDocuConverter {
         onCompleted();
     }
 
+    @Override
+    public void setPageSize(PageSize pageSize) {
+        throw new UnsupportedOperationException();
+    }
 }

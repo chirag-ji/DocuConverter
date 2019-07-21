@@ -1,5 +1,6 @@
 package com.chiragji.docuconverter.api;
 
+import com.chiragji.docuconverter.enums.PageSize;
 import com.chiragji.docuconverter.exceptions.UnsupportedTypeException;
 import com.chiragji.docuconverter.logic.DocuConverterFactory;
 
@@ -22,6 +23,14 @@ public interface DocuConverter {
      * @throws Exception if any error occur in the document conversion
      */
     void convertIn(OutputStream outputStream) throws Exception;
+
+    /**
+     * This will set the document size
+     *
+     * @param pageSize document size
+     * @apiNote This is only effective in some conversions
+     */
+    void setPageSize(PageSize pageSize);
 
     /**
      * This will initiate the implementers of the {@link DocuConverter} to perform the related conversion

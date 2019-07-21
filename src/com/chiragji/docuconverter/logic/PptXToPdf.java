@@ -46,7 +46,7 @@ final class PptXToPdf extends AbstractDocuConverter {
         onProcessing();
         AffineTransform affineTransform = new AffineTransform();
         affineTransform.setToScale(zoomLevel, zoomLevel);
-        Document document = new Document();
+        Document document = new Document(this.pageSize.getPageDimension());
         PdfWriter pdfWriter = PdfWriter.getInstance(document, outputStream);
         document.open();
         int width = (int) Math.ceil(this.size.width * zoomLevel), height = (int) Math.ceil(this.size.height * zoomLevel);

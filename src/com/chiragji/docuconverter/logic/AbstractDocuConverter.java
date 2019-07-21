@@ -1,6 +1,7 @@
 package com.chiragji.docuconverter.logic;
 
 import com.chiragji.docuconverter.api.DocuConverter;
+import com.chiragji.docuconverter.enums.PageSize;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -19,6 +20,7 @@ public abstract class AbstractDocuConverter implements DocuConverter, AutoClosea
     protected OutputStream outputStream;
     private boolean debug;
     private boolean autoClose;
+    protected PageSize pageSize = PageSize.A4;
 
     protected AbstractDocuConverter(InputStream inputStream) {
         Objects.requireNonNull(inputStream, "InputStream is null");
@@ -67,6 +69,11 @@ public abstract class AbstractDocuConverter implements DocuConverter, AutoClosea
 
     public boolean isAutoCloseResourceOnComplete() {
         return autoClose;
+    }
+
+    @Override
+    public void setPageSize(PageSize pageSize) {
+        this.pageSize = Objects.requireNonNull(pageSize, "PageSize is undefined");
     }
 
     @Override

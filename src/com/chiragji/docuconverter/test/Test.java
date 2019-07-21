@@ -48,14 +48,14 @@ public class Test {
     }
 
     /**
-     * Demonstration of conversion from {@link DocumentType#DOC} to {@link ConvertToType#PDF}
+     * Demonstration of conversion from {@link DocumentType#TXT} to {@link ConvertToType#PDF}
      */
-    public void docToPdf() {
+    public void txtToPdf() {
         try {
-            File inFile = new File("test/test.doc");
-            File outFile = new File("test/testDoc.pdf");
+            File inFile = new File("test/test.txt");
+            File outFile = new File("test/testTxt.pdf");
             DocuConverter docuConverter = DocuConverter.getConverter(new FileInputStream(inFile),
-                    DocumentType.DOC, ConvertToType.PDF);
+                    DocumentType.TXT, ConvertToType.PDF);
             ((AbstractDocuConverter) docuConverter).setDebug(true); //optional
             docuConverter.convertIn(new FileOutputStream(outFile));
         } catch (Exception e) {
