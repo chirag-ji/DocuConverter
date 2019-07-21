@@ -72,5 +72,6 @@ Like to get the code in ***ByteArrayOutputStream***, we can write
 ## Current Supported Types
 - *DOCX* to *PDF*
 - *PPTX* to *PDF*
+- *TXT* to *PDF*
 
 ***Copyright © 2019 Chirag Gupta (https://github.com/chirag-ji) under MIT Licence***
