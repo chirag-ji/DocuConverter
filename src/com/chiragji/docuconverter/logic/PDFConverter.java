@@ -12,9 +12,9 @@ import java.util.Objects;
 /**
  * @author Chirag Gupta (chirag-ji)
  */
-public abstract class PDFConverter {
+abstract class PDFConverter {
 
-    public static void convert(XWPFDocument xwpfDocument, OutputStream outputStream, PdfOptions pdfOptions)
+    static void convert(XWPFDocument xwpfDocument, OutputStream outputStream, PdfOptions pdfOptions)
             throws DocuConverterException {
         try {
             Objects.requireNonNull(xwpfDocument, "Type is null");

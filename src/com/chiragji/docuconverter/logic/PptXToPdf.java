@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * @author Chirag Gupta (chirag-ji)
  */
-public class PptXToPdf extends AbstractDocuConverter {
+final class PptXToPdf extends AbstractDocuConverter {
     private List<XSLFSlide> slides;
     private Dimension size;
     private int zoomLevel = 1;
@@ -32,7 +32,7 @@ public class PptXToPdf extends AbstractDocuConverter {
         this.zoomLevel = zoomLevel;
     }
 
-    public PptXToPdf(InputStream inputStream) {
+    PptXToPdf(InputStream inputStream) {
         super(inputStream);
     }
 

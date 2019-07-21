@@ -9,10 +9,10 @@ import java.util.List;
 /**
  * @author Chirag Gupta (chirag-ji)
  */
-public class PptToPdf extends AbstractDocuConverter {
+final class PptToPdf extends AbstractDocuConverter {
     private List<Slide> slides;
 
-    public PptToPdf(InputStream inputStream) {
+    PptToPdf(InputStream inputStream) {
         super(inputStream);
     }
 
@@ -21,7 +21,7 @@ public class PptToPdf extends AbstractDocuConverter {
 
     }
 
-    private void init(){
-        
+    private void init() {
+
     }
 }

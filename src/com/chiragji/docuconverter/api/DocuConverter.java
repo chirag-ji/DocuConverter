@@ -1,12 +1,10 @@
 package com.chiragji.docuconverter.api;
 
 import com.chiragji.docuconverter.exceptions.UnsupportedTypeException;
-import com.chiragji.docuconverter.logic.DocXtoPdf;
-import com.chiragji.docuconverter.logic.PptXToPdf;
+import com.chiragji.docuconverter.logic.DocuConverterFactory;
 
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Objects;
 
 /**
  * API for converting Document from one from to another format
@@ -32,21 +30,11 @@ public interface DocuConverter {
      * @param from        Type of source document
      * @param to          Type of designating document
      * @return The type implementor of the related conversion method
-     * @throws Exception                any error in conversion
      * @throws UnsupportedTypeException if no implementation found for the documents
+     * @see DocuConverterFactory#getConverter(InputStream, DocumentType, ConvertToType)
      */
-    static DocuConverter getConverter(InputStream inputStream, DocumentType from, ConvertToType to) throws Exception {
-        Objects.requireNonNull(from, "DocumentType Type is null");
-        Objects.requireNonNull(to, "ConverTo type document to is null");
-        System.out.println("from = " + from + ", to = " + to);
-        if (to == ConvertToType.PDF) {
-            if (from == DocumentType.DOCX)
-                return new DocXtoPdf(inputStream);
-            else if (from == DocumentType.PPTX)
-                return new PptXToPdf(inputStream);
-//            else if (from == DocumentType.DOC)
-//                return new DocToPdf(inputStream);
-        }
-        throw new UnsupportedTypeException("Conversion from '" + from.name() + "' to '" + to.name() + "' is not currently supported");
+    static DocuConverter getConverter(InputStream inputStream, DocumentType from, ConvertToType to)
+            throws UnsupportedTypeException {
+        return DocuConverterFactory.getConverter(inputStream, from, to);
     }
 }
