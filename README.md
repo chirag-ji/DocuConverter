@@ -10,7 +10,7 @@ A standalone Java Library and API to convert the Microsoft Office Documents to o
 
 
 ## Why I wrote this API
-I faced many problem in converting files from one format to another format from, say, *DOCX* to *PDF* and to do that simple task, any one have to look to many sources to get the working code. for many developers, this was the headache to code and test and so on... So to solve this problem and keeping in mind the headache of this searching, I created this API which is very handy  to use, and can be also used in your Applications too
+I faced many problem in converting files from one format to another format from, say, *DOCX* to *PDF* and to do that simple task, any one have to look to many sources to get the working code, otherwise have to use other properity software or heavy softwares to convert them. For many developers, this was the headache to code and test and so on... so to solve this problem and keeping in mind the headache of this searching, I created this API which is very handy  to use, and can be also used in your Applications too
 
 
 ## API Uses in your program
