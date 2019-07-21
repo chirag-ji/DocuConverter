@@ -1,6 +1,7 @@
 # DocuConverter
 
 A standalone Java Library and API to convert the Microsoft Office Documents to other format very quickly.
+
 ***Note**:   This API is build on JDK 1.8 and hence it requires JRE 8 to run.*
 
 ## Features
@@ -15,33 +16,32 @@ I faced many problem in converting files from one format to another format from,
 
 ## API Uses in your program
 
-    File inFile = new File("test/test.docx");  
-    File outFile = new File("test/testDocX.pdf");  
-    DocuConverter docuConverter = DocuConverter.getConverter(new FileInputStream(inFile),  
-            DocumentType.DOCX, ConvertToType.PDF);  
+    File inFile = new File("test/test.docx");
+    File outFile = new File("test/testDocX.pdf");
+    DocuConverter docuConverter = DocuConverter.getConverter(new FileInputStream(inFile),
+            DocumentType.DOCX, ConvertToType.PDF);
     ((AbstractDocuConverter) docuConverter).setDebug(true); //optional, only if you want the log output
     docuConverter.convertIn(new FileOutputStream(outFile));
 
-Any **OutputStream** and **InputStream** can be used here, 
+Any **OutputStream** and **InputStream** can be used here,
 Like to get the code in ***ByteArrayOutputStream***, we can write
- 
 
-    File inFile = new File("test/test.docx");  
-    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();  
-    DocuConverter docuConverter = DocuConverter.getConverter(new FileInputStream(inFile),  
-            DocumentType.DOCX, ConvertToType.PDF);  
+    File inFile = new File("test/test.docx");
+    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+    DocuConverter docuConverter = DocuConverter.getConverter(new FileInputStream(inFile),
+            DocumentType.DOCX, ConvertToType.PDF);
     ((AbstractDocuConverter) docuConverter).setDebug(true); //optional, only if you want the log output
-    docuConverter.convertIn(byteArrayOutputStream);  
+    docuConverter.convertIn(byteArrayOutputStream);
     System.out.println(byteArrayOutputStream);
- 
+
  ### Including API in your project
- Only you have to unzip abd include the jar file from the [release](https://github.com/chirag-ji/DocuConverter/releases) tab to your project
+ Only you have to unzip and include the jar file from the [release](https://github.com/chirag-ji/DocuConverter/releases) tab to your project
 > See
-> 
+>
 > [Adding external libraries in IntelliJ Idea](https://stackoverflow.com/questions/1051640/correct-way-to-add-external-jars-lib-jar-to-an-intellij-idea-project/#answer-1051705)
 >
 > [Adding external libraries in NetBeans](https://stackoverflow.com/questions/4879903/how-to-add-a-jar-in-netbeans/#answer-4879952)
-> 
+>
 > [Adding external libraries in Eclipse](https://stackoverflow.com/questions/3280353/how-to-import-a-jar-in-eclipse/#answer-3280384)
 
 
@@ -69,6 +69,8 @@ Like to get the code in ***ByteArrayOutputStream***, we can write
 - iTextPDF
 - And others, please see [lib folder](https://github.com/chirag-ji/DocuConverter/tree/master/lib)
 
-**Note**: Currently this API is only converting *DOCX*, *PPTX* to *PDF* and more conversions will be added soon.
+## Current Supported Types
+- *DOCX* to *PDF*
+- *PPTX* to *PDF*
 
 ***Copyright © 2019 Chirag Gupta (https://github.com/chirag-ji) under MIT Licence***
