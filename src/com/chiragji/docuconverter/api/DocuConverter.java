@@ -33,6 +33,13 @@ public interface DocuConverter {
     void setPageSize(PageSize pageSize);
 
     /**
+     * This will set the convert to print processing info
+     *
+     * @param verbose true to enable verbose
+     */
+    void setVerbose(boolean verbose);
+
+    /**
      * This will initiate the implementers of the {@link DocuConverter} to perform the related conversion
      *
      * @param inputStream The stream in which the source document exists

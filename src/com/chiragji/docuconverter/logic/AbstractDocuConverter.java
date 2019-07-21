@@ -18,7 +18,7 @@ public abstract class AbstractDocuConverter implements DocuConverter, AutoClosea
 
     protected final InputStream inputStream;
     protected OutputStream outputStream;
-    private boolean debug;
+    private boolean verbose;
     private boolean autoClose;
     protected PageSize pageSize = PageSize.A4;
 
@@ -31,12 +31,13 @@ public abstract class AbstractDocuConverter implements DocuConverter, AutoClosea
         this.outputStream = Objects.requireNonNull(outputStream, "OutputStream is null");
     }
 
-    public void setDebug(boolean debug) {
-        this.debug = debug;
+    @Override
+    public void setVerbose(boolean verbose) {
+        this.verbose = verbose;
     }
 
-    public boolean isDebug() {
-        return debug;
+    public boolean isVerbose() {
+        return verbose;
     }
 
     protected void onStart() {
@@ -59,7 +60,7 @@ public abstract class AbstractDocuConverter implements DocuConverter, AutoClosea
     }
 
     protected void log(String message, Level level) {
-        if (isDebug())
+        if (isVerbose())
             System.out.println(level + ": " + new Date() + ": " + message);
     }
 
