@@ -7,12 +7,13 @@ package com.chiragji.docuconverter;
  */
 public interface BuildConfig {
     String APP_NAME = "DocuConverter";
-    String VERSION = "1.0";
-    int VERSION_CODE = 1;
-    String BUILD_DATE = "20-July-2019";
-    String BUILD = "1.20190720.1500";
+    String VERSION = "1.1";
+    int BUILD_CODE = 2;
+    String BUILD_DATE = "21-July-2019";
+    String BUILD = VERSION + ".20190721.1335";
     String LICENCE = "MIT License";
     String COPYRIGHT_YEAR = "2019";
 
+    // development flag
     boolean debug = false;
 }
