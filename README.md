@@ -5,7 +5,7 @@ A standalone Java Library and API to convert the Microsoft Office Documents to o
 ***Note**:   This API is build on JDK 1.8 and hence it requires JRE 8 to run.*
 
 ## Features
-- Light Weight
+- Light Weight process
 - Quick Conversion
 - Less fail rates
 
