@@ -5,7 +5,6 @@ import com.chiragji.docuconverter.api.DocuConverter;
 import com.chiragji.docuconverter.api.DocumentType;
 import com.chiragji.docuconverter.console.ConsoleValues;
 import com.chiragji.docuconverter.exceptions.DocuConverterException;
-import com.chiragji.docuconverter.test.Test;
 import org.kohsuke.args4j.CmdLineParser;
 
 import java.io.File;
@@ -19,13 +18,7 @@ import java.io.FileOutputStream;
  */
 public class Bootstrap {
     public static void main(String... args) {
-        if (BuildConfig.debug) {
-            Test test = new Test();
-//            test.docXToPdf();
-//            test.pptXToPdf();
-//            test.txtToPdf();
-        } else
-            processConsoleArgs(args);
+        processConsoleArgs(args);
     }
 
     private static void processConsoleArgs(String... cmdArgs) {
