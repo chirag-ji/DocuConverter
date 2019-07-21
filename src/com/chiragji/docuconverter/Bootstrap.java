@@ -95,7 +95,7 @@ public class Bootstrap {
     }
 
     private static void printVersion() {
-        System.out.println(BuildConfig.APP_NAME + " [Version " + BuildConfig.BUILD + "]\nCopyright © " +
+        System.out.println(BuildConfig.APP_NAME + " [Version " + BuildConfig.BUILD + "]\nCopyright (c) " +
                 BuildConfig.COPYRIGHT_YEAR + " Chirag Gupta (https://github.com/chirag-ji) under MIT Licence\n");
     }
 }
