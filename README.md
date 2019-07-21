@@ -20,7 +20,7 @@ I faced many problem in converting files from one format to another format from,
     File outFile = new File("test/testDocX.pdf");
     DocuConverter docuConverter = DocuConverter.getConverter(new FileInputStream(inFile),
             DocumentType.DOCX, ConvertToType.PDF);
-    ((AbstractDocuConverter) docuConverter).setDebug(true); //optional, only if you want the log output
+    docuConverter.setVerbose(true); //optional, only if you want the log output
     docuConverter.convertIn(new FileOutputStream(outFile));
 
 Any **OutputStream** and **InputStream** can be used here,
@@ -30,7 +30,7 @@ Like to get the code in ***ByteArrayOutputStream***, we can write
     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
     DocuConverter docuConverter = DocuConverter.getConverter(new FileInputStream(inFile),
             DocumentType.DOCX, ConvertToType.PDF);
-    ((AbstractDocuConverter) docuConverter).setDebug(true); //optional, only if you want the log output
+    docuConverter.setVerbose(true); //optional, only if you want the log output
     docuConverter.convertIn(byteArrayOutputStream);
     System.out.println(byteArrayOutputStream);
 
