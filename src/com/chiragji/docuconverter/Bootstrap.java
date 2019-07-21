@@ -5,7 +5,6 @@ import com.chiragji.docuconverter.api.DocuConverter;
 import com.chiragji.docuconverter.api.DocumentType;
 import com.chiragji.docuconverter.console.ConsoleValues;
 import com.chiragji.docuconverter.exceptions.DocuConverterException;
-import com.chiragji.docuconverter.logic.AbstractDocuConverter;
 import com.chiragji.docuconverter.test.Test;
 import org.kohsuke.args4j.CmdLineParser;
 
@@ -22,9 +21,9 @@ public class Bootstrap {
     public static void main(String... args) {
         if (BuildConfig.debug) {
             Test test = new Test();
-            test.docXToPdf();
-            test.pptXToPdf();
-            test.txtToPdf();
+//            test.docXToPdf();
+//            test.pptXToPdf();
+//            test.txtToPdf();
         } else
             processConsoleArgs(args);
     }
@@ -59,7 +58,7 @@ public class Bootstrap {
             DocumentType inType = getDocumentType(inFile);
             ConvertToType toType = getConvertToType(outFile);
             DocuConverter docuConverter = DocuConverter.getConverter(new FileInputStream(inFile), inType, toType);
-            ((AbstractDocuConverter) docuConverter).setDebug(consoleValues.isVerbose());
+            docuConverter.setVerbose(consoleValues.isVerbose());
             docuConverter.convertIn(new FileOutputStream(outFile));
             long total = System.currentTimeMillis() - start;
             System.out.println("File conversion succeed in " + total + " ms");
