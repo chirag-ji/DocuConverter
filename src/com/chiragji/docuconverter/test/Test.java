@@ -61,4 +61,20 @@ public class Test {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Demonstration of conversion from {@link DocumentType#PPT} to {@link ConvertToType#PDF}
+     */
+    public void pptToPdf() {
+        try {
+            File inFile = new File("test/test.ppt");
+            File outFile = new File("test/testPpt.pdf");
+            DocuConverter docuConverter = DocuConverter.getConverter(new FileInputStream(inFile),
+                    DocumentType.PPT, ConvertToType.PDF);
+            docuConverter.setVerbose(true); //optional
+            docuConverter.convertIn(new FileOutputStream(outFile));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

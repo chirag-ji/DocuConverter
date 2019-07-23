@@ -34,6 +34,8 @@ public abstract class DocuConverterFactory {
                 return new PptXToPdf(inputStream);
             else if (from == DocumentType.TXT)
                 return new TextToPdf(inputStream);
+            else if (from == DocumentType.PPT)
+                return new PptToPdf(inputStream);
         }
         throw new UnsupportedTypeException("Conversion from '" + from.name() + "' to '" + to.name() + "' is not currently supported");
     }
