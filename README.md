@@ -69,9 +69,10 @@ Like to get the code in ***ByteArrayOutputStream***, we can write
 - iTextPDF
 - And others, please see [lib folder](https://github.com/chirag-ji/DocuConverter/tree/master/lib)
 
-## Current Supported Types
+## Current Supported Conversion Types
 - *DOCX* to *PDF*
 - *PPTX* to *PDF*
 - *TXT* to *PDF*
+- *PPT* to *PDF*
 
 ***Copyright © 2019 Chirag Gupta (https://github.com/chirag-ji) under MIT Licence***

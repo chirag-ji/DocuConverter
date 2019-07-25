@@ -6,5 +6,5 @@ package com.chiragji.docuconverter.api;
  * @author Chirag Gupta (chirag-ji)
  */
 public enum DocumentType {
-    DOCX, PPTX, TXT
+    DOCX, PPTX, TXT, PPT
 }
