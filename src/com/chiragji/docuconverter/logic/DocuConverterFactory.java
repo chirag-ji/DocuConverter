@@ -28,14 +28,16 @@ public abstract class DocuConverterFactory {
         Objects.requireNonNull(from, "DocumentType Type is null");
         Objects.requireNonNull(to, "ConvertTo type document to is null");
         if (to == ConvertToType.PDF) {
-            if (from == DocumentType.DOCX)
-                return new DocXtoPdf(inputStream);
-            else if (from == DocumentType.PPTX)
-                return new PptXToPdf(inputStream);
-            else if (from == DocumentType.TXT)
-                return new TextToPdf(inputStream);
-            else if (from == DocumentType.PPT)
-                return new PptToPdf(inputStream);
+            switch (from) {
+                case DOCX:
+                    return new DocXtoPdf(inputStream);
+                case PPTX:
+                    return new PptXToPdf(inputStream);
+                case TXT:
+                    return new TextToPdf(inputStream);
+                case PPT:
+                    return new PptToPdf(inputStream);
+            }
         }
         throw new UnsupportedTypeException("Conversion from '" + from.name() + "' to '" + to.name() + "' is not currently supported");
     }
