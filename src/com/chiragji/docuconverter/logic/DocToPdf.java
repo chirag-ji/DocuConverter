@@ -9,7 +9,7 @@ import java.io.OutputStream;
 /**
  * @author Chirag Gupta (chirag-ji)
  */
-final class DocToPdf extends AbstractDocuConverter {
+public final class DocToPdf extends AbstractDocuConverter {
     DocToPdf(InputStream inputStream) {
         super(inputStream);
     }

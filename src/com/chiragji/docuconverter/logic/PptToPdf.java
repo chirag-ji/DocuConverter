@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * @author Chirag Gupta (chirag-ji)
  */
-final class PptToPdf extends AbstractDocuConverter {
+public final class PptToPdf extends AbstractDocuConverter {
     private List<HSLFSlide> slides;
     private Dimension size;
     private int zoomLevel = 2;

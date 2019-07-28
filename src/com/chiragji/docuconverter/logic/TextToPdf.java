@@ -16,7 +16,7 @@ import java.util.Objects;
 /**
  * @author Chirag Gupta (chirag-ji)
  */
-final class TextToPdf extends AbstractDocuConverter {
+public final class TextToPdf extends AbstractDocuConverter {
     private FontStyle fontStyle = FontStyle.NORMAL;
     private int fontSize = 11;
 
