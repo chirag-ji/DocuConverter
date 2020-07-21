@@ -38,6 +38,10 @@ public abstract class DocuConverterFactory {
                 case PPT:
                     return new PptToPdf(inputStream);
             }
+        } else if (to == ConvertToType.XML) {
+            if (from == DocumentType.CSV) {
+                return new CsvToXml(inputStream);
+            }
         }
         throw new UnsupportedTypeException("Conversion from '" + from.name() + "' to '" + to.name() + "' is not currently supported");
     }
