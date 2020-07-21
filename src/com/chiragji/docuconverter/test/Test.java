@@ -77,4 +77,20 @@ public class Test {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Demonstration of conversion from {@link DocumentType#CSV} to {@link ConvertToType#XML}
+     */
+    public void csvToXml() {
+        try {
+            File inFile = new File("test/test.csv");
+            File outFile = new File("test/test.xml");
+            DocuConverter docuConverter = DocuConverter.getConverter(new FileInputStream(inFile),
+                    DocumentType.CSV, ConvertToType.XML);
+            docuConverter.setVerbose(true);
+            docuConverter.convertIn(new FileOutputStream(outFile));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
