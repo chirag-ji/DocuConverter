@@ -6,5 +6,5 @@ package com.chiragji.docuconverter.api;
  * @author Chirag Gupta (chirag-ji)
  */
 public enum ConvertToType {
-    PDF
+    PDF, XML
 }
