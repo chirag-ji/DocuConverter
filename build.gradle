@@ -6,6 +6,10 @@ repositories {
     mavenCentral()
 }
 
+int versionCode = 1
+group 'com.chiragji'
+version '2.0.0'
+
 dependencies {
     implementation 'com.google.guava:guava:31.1-jre'
     implementation 'args4j:args4j:2.33'
