@@ -7,7 +7,28 @@ repositories {
 }
 
 dependencies {
+    implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'args4j:args4j:2.33'
+    implementation 'org.docx4j:docx4j:6.1.2'
+    implementation 'org.apache.commons:commons-collections4:4.4'
+    implementation 'org.apache.commons:commons-compress:1.21'
+    implementation 'commons-io:commons-io:2.11.0'
 
+    implementation 'com.itextpdf:itextpdf:5.5.13.3'
+    implementation 'com.itextpdf:itext-asian:5.2.0'
+
+    implementation 'org.apache.poi:poi-ooxml-schemas:4.1.2'
+    implementation 'org.apache.poi:poi-scratchpad:5.2.2'
+    implementation 'org.apache.poi:poi-ooxml:5.2.2'
+    implementation 'org.apache.xmlbeans:xmlbeans:5.1.0'
+
+    implementation 'fr.opensagres.xdocreport:fr.opensagres.xdocreport.document:2.0.3'
+    implementation 'fr.opensagres.xdocreport:fr.opensagres.xdocreport.document.docx:2.0.3'
+    implementation 'fr.opensagres.xdocreport:fr.opensagres.xdocreport.converter.docx.xwpf:2.0.3'
+    implementation 'fr.opensagres.xdocreport:org.apache.poi.xwpf.converter.pdf:1.0.6'
+    implementation 'fr.opensagres.xdocreport:fr.opensagres.xdocreport.template:2.0.3'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
 }
 
 test {
