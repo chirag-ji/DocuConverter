@@ -23,9 +23,9 @@ import java.util.List;
 public final class PptXToPdf extends AbstractDocuConverter {
     private List<XSLFSlide> slides;
     private Dimension size;
-    private int zoomLevel = 1;
+    private double zoomLevel = 1;
 
-    public void setZoomLevel(int zoomLevel) {
+    public void setZoomLevel(double zoomLevel) {
         if (zoomLevel <= 0)
             throw new IllegalArgumentException("Invalid zoo level: " + zoomLevel +
                     ", A non zero positive number is only acceptable");
