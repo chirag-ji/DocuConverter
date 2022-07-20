@@ -51,7 +51,8 @@ public class CsvToXml extends AbstractDocuConverter {
                     String[] row = getData(line);
                     for (int i = 0; i < headers.length; i++) {
                         Element dataElem = document.createElement(headers[i]);
-                        dataElem.appendChild(document.createTextNode(row[i]));
+                        String data = i >= row.length ? "" : row[i];
+                        dataElem.appendChild(document.createTextNode(data));
                         rowElement.appendChild(dataElem);
                     }
                 }
@@ -60,7 +61,21 @@ public class CsvToXml extends AbstractDocuConverter {
     }
 
     private String[] getData(String line) {
-        return line.split(",");
+        String[] parts = line.split(",");
+        return enhanceHeaders(parts);
+    }
+
+    private String[] enhanceHeaders(String[] heads) {
+        String[] res = new String[heads.length];
+        for (int i = 0; i < res.length; i++) {
+            String p = heads[i];
+            if (p.startsWith("\"") || p.contains(" ")) {
+                res[i] = p.replace("\"", "").replace(" ", "");
+            } else {
+                res[i] = p;
+            }
+        }
+        return res;
     }
 
     private Document getNewDocument() throws ParserConfigurationException {
