@@ -39,9 +39,10 @@ public class CsvToXml extends AbstractDocuConverter {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                if (!headerParsed && TextUtils.isEmpty(line))
+                if (TextUtils.isEmpty(line)) {
                     continue;
-                else if (!headerParsed) {
+                }
+                if (!headerParsed) {
                     headers = getData(line);
                     headerParsed = true;
                 } else {
