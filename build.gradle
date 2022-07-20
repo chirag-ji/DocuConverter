@@ -76,6 +76,9 @@ dependencies {
     implementation 'fr.opensagres.xdocreport:fr.opensagres.xdocreport.template:2.0.3'
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    testImplementation 'org.mockito:mockito-core:4.6.1'
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.6.1'
+    testImplementation 'commons-io:commons-io:2.11.0'
 }
 
 test {
