@@ -1,4 +1,6 @@
 # DocuConverter
+[![](https://jitpack.io/v/chirag-ji/DocuConverter.svg)](https://jitpack.io/#chirag-ji/DocuConverter)
+
 
 A standalone Java Library and API to convert the Microsoft Office Documents to other format very quickly.
 
