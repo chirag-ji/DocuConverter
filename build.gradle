@@ -1,0 +1,100 @@
+import java.text.SimpleDateFormat
+
+plugins {
+    id 'java-library'
+    id "com.github.gmazzo.buildconfig" version "3.0.3"
+    id "org.sonarqube" version "3.4.0.2513"
+}
+
+repositories {
+    mavenCentral()
+}
+
+int versionCode = 1
+group 'com.chiragji'
+version '2.0.0'
+
+static def getDateTime() {
+    return new Date().format("yyyyMMdd.HHmm")
+}
+
+Date buildDate = new Date()
+String buildDateTag = getDateTime()
+String buildTag = project.version + '_' + buildDateTag + '_' + versionCode
+SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
+
+buildConfig {
+    def rootProjectName = project.rootProject.name.toLowerCase()
+
+    packageName("${project.group}.${rootProjectName}")
+
+    buildConfigField 'String', 'APP_NAME', "\"${project.rootProject.name}\""
+    buildConfigField 'String', 'VERSION', "\"$version\""
+    buildConfigField 'String', 'BUILD_TAG', "\"$buildDateTag\""
+    buildConfigField 'String', 'BUILD', "\"$version.$buildDateTag\""
+    buildConfigField 'String', 'LICENCE', "\"MIT License\""
+    buildConfigField 'String', 'COPYRIGHT_YEAR', "\"2019\""
+    buildConfigField 'java.util.Date', 'BUILD_DATE', "new java.util.Date(${buildDate.getTime()}L)"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    withSourcesJar()
+}
+
+jar {
+    manifest {
+        attributes(
+                "Version-Code": versionCode,
+                "Build-Time": formatter.format(buildDate),
+                "Release-Version": project.version,
+                "Release-Tag": buildTag
+        )
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "DocuConverter"
+        property "sonar.organization", "chirag-ji"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
+
+ext {
+    apachePoi = "5.2.2"
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'args4j:args4j:2.33'
+    implementation 'org.docx4j:docx4j:6.1.2'
+    implementation 'org.apache.commons:commons-collections4:4.4'
+    implementation 'org.apache.commons:commons-compress:1.21'
+    implementation 'commons-io:commons-io:2.11.0'
+
+    implementation 'com.itextpdf:itextpdf:5.5.13.3'
+    implementation 'com.itextpdf:itext-asian:5.2.0'
+
+    implementation "org.apache.poi:poi:$apachePoi"
+    implementation "org.apache.poi:poi-ooxml-lite:$apachePoi"
+    implementation "org.apache.poi:poi-scratchpad:$apachePoi"
+    implementation "org.apache.poi:poi-ooxml:$apachePoi"
+    implementation 'org.apache.xmlbeans:xmlbeans:5.1.0'
+
+    implementation 'fr.opensagres.xdocreport:fr.opensagres.xdocreport.document:2.0.3'
+    implementation 'fr.opensagres.xdocreport:fr.opensagres.xdocreport.document.docx:2.0.3'
+    implementation 'fr.opensagres.xdocreport:fr.opensagres.xdocreport.converter.docx.xwpf:2.0.3'
+    implementation 'fr.opensagres.xdocreport:org.apache.poi.xwpf.converter.pdf:1.0.6'
+    implementation 'fr.opensagres.xdocreport:fr.opensagres.xdocreport.template:2.0.3'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    testImplementation 'org.mockito:mockito-core:4.6.1'
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.6.1'
+    testImplementation 'commons-io:commons-io:2.11.0'
+}
+
+test {
+    useJUnitPlatform()
+}
