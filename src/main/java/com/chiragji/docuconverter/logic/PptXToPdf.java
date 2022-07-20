@@ -49,7 +49,8 @@ public final class PptXToPdf extends AbstractDocuConverter {
         Document document = new Document(this.pageSize.getPageDimension());
         PdfWriter pdfWriter = PdfWriter.getInstance(document, outputStream);
         document.open();
-        int width = (int) Math.ceil(this.size.width * zoomLevel), height = (int) Math.ceil(this.size.height * zoomLevel);
+        int width = (int) Math.ceil(this.size.width * zoomLevel);
+        int height = (int) Math.ceil(this.size.height * zoomLevel);
         for (XSLFSlide slide : slides) {
             BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
             Graphics2D g = image.createGraphics();
