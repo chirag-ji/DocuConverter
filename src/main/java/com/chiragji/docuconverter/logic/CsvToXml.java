@@ -1,6 +1,5 @@
 package com.chiragji.docuconverter.logic;
 
-import com.chiragji.docuconverter.logic.AbstractDocuConverter;
 import com.chiragji.docuconverter.utils.TextUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
