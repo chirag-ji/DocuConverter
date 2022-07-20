@@ -1,6 +1,5 @@
 package com.chiragji.docuconverter.logic;
 
-import com.chiragji.docuconverter.logic.AbstractDocuConverter;
 import com.chiragji.docuconverter.utils.TextUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -40,9 +39,10 @@ public class CsvToXml extends AbstractDocuConverter {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                if (!headerParsed && TextUtils.isEmpty(line))
+                if (TextUtils.isEmpty(line)) {
                     continue;
-                else if (!headerParsed) {
+                }
+                if (!headerParsed) {
                     headers = getData(line);
                     headerParsed = true;
                 } else {

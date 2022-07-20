@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class AbstractTest {
+public abstract class AbstractTest {
 
     private static final String TEST_DIR = "src/test/resources/";
     private static final String TEST_IN_DIR = TEST_DIR + "in";

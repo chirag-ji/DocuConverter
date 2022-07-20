@@ -12,7 +12,7 @@ import java.util.Objects;
 /**
  * @author Chirag Gupta (chirag-ji)
  */
-abstract class PDFConverter {
+interface PDFConverter {
 
     static void convert(XWPFDocument xwpfDocument, OutputStream outputStream, PdfOptions pdfOptions)
             throws DocuConverterException {

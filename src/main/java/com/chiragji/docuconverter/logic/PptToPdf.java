@@ -21,9 +21,9 @@ import java.util.List;
 public final class PptToPdf extends AbstractDocuConverter {
     private List<HSLFSlide> slides;
     private Dimension size;
-    private int zoomLevel = 2;
+    private double zoomLevel = 2;
 
-    public void setZoomLevel(int zoomLevel) {
+    public void setZoomLevel(double zoomLevel) {
         if (zoomLevel <= 0)
             throw new IllegalArgumentException("Invalid zoo level: " + zoomLevel +
                     ", A non zero positive number is only acceptable");
@@ -46,7 +46,8 @@ public final class PptToPdf extends AbstractDocuConverter {
         Document document = new Document(this.pageSize.getPageDimension());
         PdfWriter pdfWriter = PdfWriter.getInstance(document, outputStream);
         document.open();
-        int width = (int) Math.ceil(this.size.width * zoomLevel), height = (int) Math.ceil(this.size.height * zoomLevel);
+        int width = (int) Math.ceil(this.size.width * zoomLevel);
+        int height = (int) Math.ceil(this.size.height * zoomLevel);
         for (HSLFSlide slide : slides) {
             BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
             Graphics2D g = image.createGraphics();

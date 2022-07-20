@@ -13,7 +13,7 @@ import java.util.Objects;
  *
  * @author Chirag Gupta (chirag-ji)
  */
-public abstract class DocuConverterFactory {
+public interface DocuConverterFactory {
     /**
      * This will initiate the implementers of the {@link DocuConverter} to perform the related conversion
      *
@@ -23,7 +23,7 @@ public abstract class DocuConverterFactory {
      * @return The type implementor of the related conversion method
      * @throws UnsupportedTypeException if no implementation found for the documents
      */
-    public static DocuConverter getConverter(InputStream inputStream, DocumentType from, ConvertToType to)
+    static DocuConverter getConverter(InputStream inputStream, DocumentType from, ConvertToType to)
             throws UnsupportedTypeException {
         Objects.requireNonNull(from, "DocumentType Type is null");
         Objects.requireNonNull(to, "ConvertTo type document to is null");
