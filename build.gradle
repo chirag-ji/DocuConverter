@@ -36,6 +36,12 @@ buildConfig {
     buildConfigField 'java.util.Date', 'BUILD_DATE', "new java.util.Date(${buildDate.getTime()}L)"
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    withSourcesJar()
+}
+
 jar {
     manifest {
         attributes(
