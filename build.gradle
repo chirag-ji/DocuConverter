@@ -53,6 +53,10 @@ jar {
     }
 }
 
+ext {
+    apachePoi = "5.2.2"
+}
+
 dependencies {
     implementation 'com.google.guava:guava:31.1-jre'
     implementation 'args4j:args4j:2.33'
@@ -64,9 +68,10 @@ dependencies {
     implementation 'com.itextpdf:itextpdf:5.5.13.3'
     implementation 'com.itextpdf:itext-asian:5.2.0'
 
-    implementation 'org.apache.poi:poi-ooxml-schemas:4.1.2'
-    implementation 'org.apache.poi:poi-scratchpad:5.2.2'
-    implementation 'org.apache.poi:poi-ooxml:5.2.2'
+    implementation "org.apache.poi:poi:$apachePoi"
+    implementation "org.apache.poi:poi-ooxml-lite:$apachePoi"
+    implementation "org.apache.poi:poi-scratchpad:$apachePoi"
+    implementation "org.apache.poi:poi-ooxml:$apachePoi"
     implementation 'org.apache.xmlbeans:xmlbeans:5.1.0'
 
     implementation 'fr.opensagres.xdocreport:fr.opensagres.xdocreport.document:2.0.3'
